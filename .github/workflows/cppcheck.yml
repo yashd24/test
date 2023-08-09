@@ -1,11 +1,21 @@
-on: [ pull_request ]
+name: cppcheck-action-test
+on: [push]
 
 jobs:
-  cpp_style_check:
+  build:
+    name: cppcheck-test
     runs-on: ubuntu-latest
-    name: Check C++ Style
     steps:
-    - name: Checkout this commit
-      uses: actions/checkout@v2
-    - name: Run style checks
-      uses: coleaeason/actions-uncrustify@v1
+      - uses: actions/checkout@v2
+          
+      - name: cppcheck
+        uses: deep5050/cppcheck-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN}}
+          
+        
+      - name: publish report    
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: 'main' # your branch name goes here
