@@ -34,11 +34,17 @@ void printArray(int arr[], int size)
 // Driver program to test above functions
 int main()
 {
-	int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
-	int N = sizeof(arr) / sizeof(arr[0]);
-	bubbleSort(arr, N);
+	int arr[100000];
+	int size;
+    cout << "Enter the size of the array: ";
+    cin >> size;
+
+    for (int i = 0; i < size; ++i) {
+        cin >> arr[i];
+    }
+	bubbleSort(arr, size);
 	cout << "Sorted array: \n";
-	printArray(arr, N);
+	printArray(arr, size);
 	return 0;
 }
 // This code is contributed by shivanisinghss2110
