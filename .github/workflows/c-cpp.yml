@@ -1,0 +1,14 @@
+name : Testing Bubble sort 
+run-name: CSOC Leaderboard
+on: [push]
+
+job:
+  check_syntax:
+    runs-on: ubuntu-latest
+    
+    steps:
+      -name: Checkout code
+      -uses: actions/checkout@v2
+
+      -name: Compile C code
+      -run: gcc -fsyntax-only bubble.c
