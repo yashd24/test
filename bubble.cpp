@@ -30,18 +30,4 @@ void printArray(int arr[], int size)
 }
 
 // Driver program to test above functions
-int main()
-{
-	int arr[100000];
-	int size;
-    cout << "Enter the size of the array: ";
-    cin >> size;
 
-    for (int i = 0; i < size; ++i) {
-        cin >> arr[i];
-    }
-	bubbleSort(arr, size);
-	cout << "Sorted array: \n";
-	printArray(arr, size);
-	return 0;
-}
