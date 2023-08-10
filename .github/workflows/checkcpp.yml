@@ -20,5 +20,5 @@ jobs:
       
       - name: Compile and Run Prog
       - run: |
-          g++ bubble.c -o program
+          g++ bubble.cpp -o program
           ./program
