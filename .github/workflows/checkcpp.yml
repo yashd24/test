@@ -13,12 +13,12 @@ jobs:
 
     steps:
       - name: Checkout Code
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       
       - name: Setup Compiler
-      - run: sudo apt-get install g++
+        run: sudo apt-get install g++
       
       - name: Compile and Run Prog
-      - run: |
+        run: |
           g++ bubble.cpp -o program
           ./program
