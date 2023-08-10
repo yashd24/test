@@ -18,7 +18,7 @@ jobs:
       - name: Setup Compiler
         run: sudo apt-get install g++
       
-      - name: Compile and Run Prog
+      - name: Compile and Run Tests
         run: |
-          g++ bubble.cpp -o program
+          g++ bubble.cpp test_bubble.cpp -o program
           ./program
